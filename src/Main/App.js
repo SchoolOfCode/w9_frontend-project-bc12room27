@@ -139,8 +139,10 @@ function App() {
       <div className="right-section">
         <h1>{selectedTopic.title}</h1>
         {selectedTopic.resources.map((resource, index)=> {
-          return <p>{index+1}. {resource}</p>
+          return <p>{index+1} {resource}</p>
         })}
+        <p>{selectedTopic.summary}</p>
+        <p>{selectedTopic.notes}</p>
       </div>
     </div>
   );
