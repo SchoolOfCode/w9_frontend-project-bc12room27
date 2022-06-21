@@ -53,3 +53,17 @@
     transform: rotate(360deg);
   }
 }
+
+.topic {
+  border: 2px solid red;
+  display: flex;
+}
+
+.left-column, .right-column {
+  border: 2px solid green;
+  width: 100%
+}
+
+.single-topic {
+  border: 2px solid blue;
+}
