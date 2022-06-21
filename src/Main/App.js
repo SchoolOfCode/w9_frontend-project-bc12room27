@@ -1,7 +1,9 @@
 import "./App.css";
-import "../Main/DaySection/DaySection";
-import DaySection from "../Main/DaySection/DaySection";
 import { useState, useEffect } from "react";
+import DropDown from "./DropDown/DropDown";
+import TopicResults from "./TopicResults/TopicResults";
+import Display from "../Display/Display";
+import Profile from "../Profile/Profile";
 
 const dummyData = [
   {
@@ -48,13 +50,35 @@ const dummyData = [
     resources: ["resource 1", "resource 2"],
     notes: "",
   },
+  {
+  id: 5,
+  title: "Props",
+  week: 6,
+  day: 3,
+  topicTitle: "React",
+  completion: 0,
+  summary: "this is a summary",
+  resources: ["resource 1", "resource 2"],
+  notes: "",
+},
+{
+  id: 6,
+  title: "Functions",
+  week: 1,
+  day: 1,
+  topicTitle: "Fundamentals of Javascript",
+  completion: 0,
+  summary: "this is a summary",
+  resources: ["resource 1", "resource 2"],
+  notes: "",
+},
 ];
 
 function App() {
   const [userSearch, setUserSearch] = useState("");
   const [topicsBySearch, setTopicsBySearch] = useState(dummyData);
   const [selectedTopic, setSelectedTopic] = useState({
-    title: "Learning Point",
+    title: "Sub Topic",
     resources: [],
     summary: "",
     notes: "",
@@ -76,7 +100,6 @@ function App() {
 
   function handleChange(e) {
     e.preventDefault();
-
     setUserSearch(e.target.value);
   }
 
@@ -93,57 +116,33 @@ function App() {
 
   return (
     <div className="App">
-      {/* <h1>Our App</h1>
-      <DaySection/> */}
+      <div className="Profile">
+        <h1>Profile</h1>
+        <Profile />
+      </div>
+     
       <div className="main-section">
         {/* // headers  */}
+        <h1>Our App</h1>
         {/* // SELECTION COMPONENT */}
-
-        <div className="options">
-          <label htmlFor="topics">Choose a topic:</label>
-          <select name="topics" onChange={handleChange}>
-            <option value="Fundamentals of Javascript">
-              Fundamentals of Javascript
-            </option>
-            <option value="React">React</option>
-            <option value="Node">Node</option>
-            <option value="SQL">SQL</option>
-          </select>
-        </div>
+        <DropDown handleChange={handleChange}  />
+         {/* RESULTS OUTPUT */}
+        <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
+         {/* RESULTS OUTPUT */}
+         <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
+          {/* RESULTS OUTPUT */}
+        <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
+         {/* RESULTS OUTPUT */}
+         <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
+          {/* RESULTS OUTPUT */}
+        <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
       </div>
-
-      {/* Results output */}
-      {topicsBySearch.length > 0 ? (
-        <div className="topic">
-          <div className="left-column">
-            <div>{topicsBySearch[0].topicTitle}</div>
-            <p>Completion %</p>
-          </div>
-          <div className="right-column">
-            {topicsBySearch.map((topic ,index) => {
-              return (
-                <div className="single-topic" onClick={()=>subTopicClick(topic)}>
-                  <p>{topic.title}</p>
-                  <p>
-                    Week: {topic.week} Day: {topic.day}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ) : (
-        <>Choose a Topic</>
-      )}
-
-      <div className="right-section">
-        <h1>{selectedTopic.title}</h1>
-        {selectedTopic.resources.map((resource, index)=> {
-          return <p>{index+1} {resource}</p>
-        })}
-        <p>{selectedTopic.summary}</p>
-        <p>{selectedTopic.notes}</p>
+     
+      <div className="display">
+        <Display selectedTopic={selectedTopic} />
       </div>
+      
+
     </div>
   );
 }
