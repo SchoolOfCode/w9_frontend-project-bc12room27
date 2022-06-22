@@ -16,10 +16,11 @@ const dummyData = [
     summary: "this is a summary",
     resources: ["resource 1", "resource 2"],
     notes: "",
+    isChecked: false,
   },
   {
-    id: 2,
-    title: "Variables",
+    id: 1,
+    title: "Arrays",
     week: 1,
     day: 1,
     topicTitle: "Fundamentals of Javascript",
@@ -27,51 +28,80 @@ const dummyData = [
     summary: "this is a summary",
     resources: ["resource 1", "resource 2"],
     notes: "",
+    isChecked: false,
   },
   {
-    id: 3,
-    title: "Components",
-    week: 6,
-    day: 3,
-    topicTitle: "React",  
+    id: 1,
+    title: "Arrays",
+    week: 1,
+    day: 1,
+    topicTitle: "Fundamentals of Javascript",
     complete: false,
     summary: "this is a summary",
     resources: ["resource 1", "resource 2"],
     notes: "",
+    isChecked: false,
   },
   {
-    id: 4,
-    title: "Hooks",
-    week: 6,
+    id: 2,
+    title: "Variables",
+    week: 1,
+    day: 2,
+    topicTitle: "Fundamentals of Javascript",
+    complete: false,
+    summary: "this is a summary",
+    resources: ["resource 1", "resource 2"],
+    notes: "",
+    isChecked: false,
+  },
+  {
+    id: 3,
+    title: "Components",
+    week: 1,
     day: 3,
     topicTitle: "React",
     complete: false,
     summary: "this is a summary",
     resources: ["resource 1", "resource 2"],
     notes: "",
+    isChecked: false,
   },
   {
-  id: 5,
-  title: "Props",
-  week: 6,
-  day: 3,
-  topicTitle: "React",
-  complete: false,
-  summary: "this is a summary",
-  resources: ["resource 1", "resource 2"],
-  notes: "",
-},
-{
-  id: 6,
-  title: "Functions",
-  week: 1,
-  day: 1,
-  topicTitle: "Fundamentals of Javascript",
-  complete: false,
-  summary: "this is a summary",
-  resources: ["resource 1", "resource 2"],
-  notes: "",
-},
+    id: 4,
+    title: "Hooks",
+    week: 2,
+    day: 3,
+    topicTitle: "React",
+    complete: false,
+    summary: "this is a summary",
+    resources: ["resource 1", "resource 2"],
+    notes: "",
+    isChecked: false,
+  },
+  {
+    id: 5,
+    title: "Props",
+    week: 2,
+    day: 2,
+    topicTitle: "React",
+    complete: false,
+    summary: "this is a summary",
+    resources: ["resource 1", "resource 2"],
+    notes: "",
+    isChecked: false,
+  },
+  {
+    id: 6,
+    title: "Functions",
+    week: 2,
+    day: 1,
+    topicTitle: "Fundamentals of Javascript",
+    complete: false,
+    summary: "this is a summary",
+    resources: ["resource 1", "resource 2"],
+    notes: "",
+    isChecked: false,
+  },
 ];
 
 function App() {
@@ -83,11 +113,15 @@ function App() {
     summary: "",
     notes: "",
   });
+
+
   
-  const [isChecked, setIsChecked] = useState(dummyData[0].complete);
-  
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
+  // const [isChecked, setIsChecked] = useState(dummyData[0].complete);
+
+  const handleOnChange = (data) => {
+    // setIsChecked(!isChecked);
+    data.complete = !data.complete;
+    console.log("data: ", data);
   };
 
   /*const response = fetch("http://localhost:3000", {
@@ -98,11 +132,14 @@ function App() {
 
   function resultsFilter() {
     let resultsarr = [];
-    let results = dummyData.map((data) => {
-      if (data.topicTitle === userSearch) {
+    let week = userSearch.split(" ");
+    dummyData.map((data) => {
+      if (data.week === Number(week[1])) {
         resultsarr.push(data);
       }
     });
+    resultsarr.sort((a, b) => a.day - b.day);
+    console.log(resultsarr);
     setTopicsBySearch(resultsarr);
   }
 
@@ -116,15 +153,15 @@ function App() {
   }
 
   function subTopicClick(topic) {
+    let top = {
+      title: topic.title,
+      resources: topic.resources,
+      summary: topic.summary,
+      notes: topic.notes,
+    };
 
-    let top = {    title: topic.title,
-    resources: topic.resources,
-    summary: topic.summary,
-    notes: topic.notes}
-
-    setSelectedTopic(top)
+    setSelectedTopic(top);
   }
-
 
   return (
     <div className="App">
@@ -132,25 +169,27 @@ function App() {
         <h1>Profile</h1>
         <Profile />
       </div>
-     
+
       <div className="main-section">
         {/* // headers  */}
         <h1>Our App</h1>
         {/* // SELECTION COMPONENT */}
-        <DropDown handleChange={handleChange}  />
-         {/* RESULTS OUTPUT */}
-        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
-        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
-        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />      
-        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
-        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
+        <DropDown handleChange={handleChange} />
+        {/* RESULTS OUTPUT */}
+        {/* {topicsBySearch.map((topic) => {
+        return{" "} */}
+
+        <TopicResults
+          topics={topicsBySearch}
+          toggleFunction={handleOnChange}
+          handleClick={subTopicClick}
+        />
+        {/* // })} */}
       </div>
-     
+
       <div className="display">
         <Display selectedTopic={selectedTopic} />
       </div>
-      
-
     </div>
   );
 }

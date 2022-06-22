@@ -11,12 +11,11 @@ function DropDown(props) {
     <div className="DropDown">
           <label htmlFor="topics">Choose a topic:</label>
           <select name="topics" onChange={handleChange}>
-            <option value="Fundamentals of Javascript">
-              Fundamentals of Javascript
-            </option>
-            <option value="React">React</option>
-            <option value="Node">Node</option>
-            <option value="SQL">SQL</option>
+           
+            <option value="Week 1">Week 1</option>
+            <option value="Week 2">Week 2</option>
+            <option value="Week 3">Week 3</option>
+            <option value="Week 4">Week 4</option>
           </select>
         </div>
   );
