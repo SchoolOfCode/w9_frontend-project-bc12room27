@@ -1,5 +1,7 @@
 import '../App.css'
 
+//option values will come from fetches to the database - options.value will be by week (and week overview if possible)
+//display week and overview in jsx with `week: {week} - {weekoverview}`
 
 function DropDown(props) {
     const { handleChange } = props

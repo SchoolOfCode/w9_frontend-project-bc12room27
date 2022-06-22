@@ -84,6 +84,12 @@ function App() {
     notes: "",
   });
 
+  /*const response = fetch("http://localhost:3000", {
+    method: GET,
+  })
+
+  */
+
   function resultsFilter() {
     let resultsarr = [];
     let results = dummyData.map((data) => {

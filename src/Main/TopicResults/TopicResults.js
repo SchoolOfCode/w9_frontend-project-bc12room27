@@ -19,9 +19,6 @@ function TopicResults(props) {
               return (
                 <div className="single-topic" key={index} onClick={()=>handleClick(topic)}>
                   <p className='sub-title-text'>{topic.title}</p>
-                  {/* <p>
-                    Week: {topic.week} Day: {topic.day}
-                  </p> */}
                 </div>
               );
             })}
