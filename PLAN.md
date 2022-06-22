@@ -73,3 +73,10 @@ ORDER OF PRIORITY
 WEDNESDAY
 
 1. Make complete toggle
+
+2. Set the state for the toogle
+  - using the dummydata (useState)
+  - spread opp?
+  - make a child componment for the toogle function
+      - the state of the toggle is not been saved between topics or on refresh
+      - 

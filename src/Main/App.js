@@ -83,6 +83,12 @@ function App() {
     summary: "",
     notes: "",
   });
+  
+  const [isChecked, setIsChecked] = useState(dummyData[0].complete);
+  
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   /*const response = fetch("http://localhost:3000", {
     method: GET,
@@ -133,15 +139,11 @@ function App() {
         {/* // SELECTION COMPONENT */}
         <DropDown handleChange={handleChange}  />
          {/* RESULTS OUTPUT */}
-        <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
-         {/* RESULTS OUTPUT */}
-         <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
-          {/* RESULTS OUTPUT */}
-        <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
-         {/* RESULTS OUTPUT */}
-         <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
-          {/* RESULTS OUTPUT */}
-        <TopicResults topics={topicsBySearch} handleClick={subTopicClick} />
+        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
+        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
+        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />      
+        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
+        <TopicResults topics={topicsBySearch} toggleFunction={handleOnChange} handleClick={subTopicClick} />
       </div>
      
       <div className="display">

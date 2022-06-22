@@ -3,7 +3,7 @@ import '../App.css'
 
 function TopicResults(props) {
    
-    const {topics, handleClick} = props;
+    const {topics, handleClick, toggleFunction } = props;
 
   return (
       <>
@@ -19,6 +19,7 @@ function TopicResults(props) {
               return (
                 <div className="single-topic" key={index} onClick={()=>handleClick(topic)}>
                   <p className='sub-title-text'>{topic.title}</p>
+                  <input type="checkbox" value="Ticked" onChange={toggleFunction} input/>
                 </div>
               );
             })}
