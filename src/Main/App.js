@@ -4,6 +4,7 @@ import DropDown from "./DropDown/DropDown";
 import TopicResults from "./TopicResults/TopicResults";
 import Display from "../Display/Display";
 import Profile from "../Profile/Profile";
+import GetData from "../Data/GetData";
 
 const dummyData = [
   {
@@ -106,7 +107,7 @@ const dummyData = [
 
 function App() {
   const [userSearch, setUserSearch] = useState("");
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
   const [topicsBySearch, setTopicsBySearch] = useState(dummyData);
   const [selectedTopic, setSelectedTopic] = useState({
     title: "Sub Topic",
@@ -115,16 +116,19 @@ function App() {
     notes: "",
   });
 
-  const getData = async () => {
-    const response = await fetch('http://localhost:3000/api')
-    .then((response) => response.json());
+  // const getData = () => {
 
-    setData(response);
-  }
+  // }
+  // const getData = async () => {
+  //   const response = await fetch('http://localhost:3000/api')
+  //   .then((response) => response.json());
 
-  useEffect(() => {
-    getData();
-  }, [])
+  //   setData(response);
+  // }
+
+  // useEffect(() => {
+  //   getData();
+  // }, [])
 
   
   // const [isChecked, setIsChecked] = useState(dummyData[0].complete);
@@ -179,9 +183,9 @@ function App() {
       <div className="Profile">
         <h1>Profile</h1>
         <Profile />
+        <GetData />
       </div>
       <div>
-        {data}
       </div>
 
       <div className="main-section">
