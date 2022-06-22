@@ -106,6 +106,7 @@ const dummyData = [
 
 function App() {
   const [userSearch, setUserSearch] = useState("");
+  const [data, setData] = useState();
   const [topicsBySearch, setTopicsBySearch] = useState(dummyData);
   const [selectedTopic, setSelectedTopic] = useState({
     title: "Sub Topic",
@@ -113,7 +114,18 @@ function App() {
     summary: "",
     notes: "",
   });
-
+  useEffect(() => {
+    fetch('http://localhost:3000/api')
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } 
+      throw response;
+    })
+    .then( data => {
+      setData(data)
+    })
+  }, [])
 
   
   // const [isChecked, setIsChecked] = useState(dummyData[0].complete);
@@ -168,6 +180,7 @@ function App() {
       <div className="Profile">
         <h1>Profile</h1>
         <Profile />
+        <p>{data}</p>
       </div>
 
       <div className="main-section">
