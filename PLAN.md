@@ -67,3 +67,9 @@ ORDER OF PRIORITY
 
 4. TITLE -
    - add app name(title)
+
+
+
+WEDNESDAY
+
+1. Make complete toggle
