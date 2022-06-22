@@ -114,17 +114,16 @@ function App() {
     summary: "",
     notes: "",
   });
+
+  const getData = async () => {
+    const response = await fetch('http://localhost:3000/api')
+    .then((response) => response.json());
+
+    setData(response);
+  }
+
   useEffect(() => {
-    fetch('http://localhost:3000/api')
-    .then(response => {
-      if (response.ok) {
-        return response.json()
-      } 
-      throw response;
-    })
-    .then( data => {
-      setData(data)
-    })
+    getData();
   }, [])
 
   
@@ -180,7 +179,9 @@ function App() {
       <div className="Profile">
         <h1>Profile</h1>
         <Profile />
-        <p>{data}</p>
+      </div>
+      <div>
+        {data}
       </div>
 
       <div className="main-section">
