@@ -12,7 +12,7 @@ const GetData = () => {
     axios
     .get('http://localhost:3000/api')
     .then((res) => {
-      console.log(res.data.payload)
+      // console.log(res.data.payload)
 
       setData(res.data.payload);
     })
@@ -20,7 +20,7 @@ const GetData = () => {
       console.log(err)
     });
   };
-  console.log(data)
+  // console.log(data)
     return (
       <div>
         <div>
@@ -37,3 +37,17 @@ const GetData = () => {
 }
 
 export default GetData;
+
+
+// const filterData = () => {
+//   let selected = {selectedTopic}
+//   if {selectedTopic} {
+
+//   }
+//   data.filter()
+//   data.{selectedTopic}
+// }
+
+// const result = data.filter(
+//   data => data.{param}
+// )
