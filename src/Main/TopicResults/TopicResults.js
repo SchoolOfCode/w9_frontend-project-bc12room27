@@ -29,6 +29,7 @@ function TopicResults(props) {
               </div>
               <p className="percentage-text"> x% Complete</p>
             </div>
+            <div className="right-column">
             {a.map((b, index) => {
               return (
                 <div
@@ -56,6 +57,7 @@ function TopicResults(props) {
                 </div>
               );
             })}
+            </div>
           </div>
         );
       })}
