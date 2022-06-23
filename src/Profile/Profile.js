@@ -5,7 +5,7 @@ function Profile() {
     return(
         <div className='Profile-Container'>
             <div className="Profile-Image">Profile Image</div>
-            <div className="Profile-Info">
+            <div className="Profile-nfo">
                 <ul>
                     <li>Name: Dave Brown</li>
                     <li>Age: 27</li>
