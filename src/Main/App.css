@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
 /* EVERYTHING */
 
 
@@ -10,7 +13,7 @@
   align-content: center;
   justify-content: center;
   text-align: center;
-  font-family: sans-serif;
+  font-family: "Quicksand";
 }
 
 .Profile{
@@ -60,7 +63,7 @@
 
 .header-title {
   padding: 15px;
-  font-family: sans-serif;
+  font-family: "Quicksand";
   font-weight: bold;
   color: white;
 }
@@ -89,7 +92,7 @@
   border: none;
   border-radius: 3px;
 
-  font-family: sans-serif;
+  font-family: "Quicksand";
   margin-bottom: 50px;
   font-size: medium;
 
@@ -97,7 +100,7 @@
 }
 
 .Dropdown-Select-Words {
-  font-family: sans-serif;
+  font-family: "Quicksand";
   color: white;
   font-size: medium;
 
@@ -231,7 +234,7 @@
 
 .display-week-and-topic-div{
   font-size: medium;
-  font-family: sans-serif;
+  font-family: "Quicksand";
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -240,12 +243,12 @@
 }
 
 .display-weektopic-name-text{
-  font-family: sans-serif;
+  font-family: "Quicksand";
   font-size: 18px;
 }
 
 .display-topic-name-text{
-  font-family: sans-serif;
+  font-family: "Quicksand";
   font-size: 16px;
   font-weight:normal;
 }
@@ -260,10 +263,10 @@
 
 .display-summary-text, .display-syntax-text{
   font-size: 13px;
-  font-family: sans-serif;
+  font-family: "Quicksand";
 }
 
 .display-summary-heading, .display-syntax-heading{
-  font-family: sans-serif;
+  font-family: "Quicksand";
   font-size: 14px;
 }

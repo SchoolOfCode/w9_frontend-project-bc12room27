@@ -7,6 +7,7 @@ import Profile from "../Profile/Profile";
 import GetData from "../Data/GetData";
 import axios from 'axios';
 
+
 const dummyData = [
   {
     id: 1,
