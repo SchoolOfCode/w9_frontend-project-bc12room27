@@ -5,6 +5,7 @@ import TopicResults from "./TopicResults/TopicResults";
 import Display from "../Display/Display";
 import Profile from "../Profile/Profile";
 import GetData from "../Data/GetData";
+import GetResources from "../Data/GetResources";
 import axios from 'axios';
 
 const dummyData = [
@@ -116,6 +117,10 @@ function App() {
     summary: "",
     notes: "",
   });
+  const [selectedResource, setSelectedResource] = useState({
+    title: "",
+    resources: ""
+  });
 
 
     useEffect(() => {
@@ -173,6 +178,10 @@ console.log('Logging Data', data);
     resultsFilter();
   }, [userSearch, selectedTopic]);
 
+  useEffect(() => {
+    resultsFilter();
+  }, [userSearch, selectedResource]);
+
   function handleChange(e) {
     e.preventDefault();
     setUserSearch(e.target.value);
@@ -190,6 +199,14 @@ console.log('Logging Data', data);
     };
     setSelectedTopic(top);
   }
+
+  // function subTopicResource (resource) {
+  //   let top = {
+  //     title: resource.title,
+  //     resource: resource.resource
+  //   };
+  //   setSelectedResource(top);
+  // }
 
 
   return (
