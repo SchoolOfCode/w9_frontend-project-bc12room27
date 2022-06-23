@@ -124,7 +124,7 @@ function App() {
 
     const fetchData = () => {
       axios
-      .get('http://localhost:3000/api')
+      .get('https://projectweekroom27.herokuapp.com/api')
       .then((res) => {
         // console.log('name', res.data.payload)
         setData(res.data.payload);
@@ -186,6 +186,7 @@ console.log('Logging Data', data);
       subtopic: topic.subtopic,
       weektopic: topic.weektopic,
       summary: topic.summary,
+      syntax: topic.syntax,
     };
     setSelectedTopic(top);
   }
