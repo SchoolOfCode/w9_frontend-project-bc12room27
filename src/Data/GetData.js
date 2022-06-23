@@ -20,12 +20,16 @@ const GetData = () => {
       console.log(err)
     });
   };
-
+  console.log(data)
     return (
       <div>
         <div>
           {data.map((data) => (
-            <div>{data.topic}</div>
+            <div>
+              {/* <div>{data.topic}</div>
+              <div>{data.subtopic}</div>  */}
+              {/* <div className="data-summary">{data.summary}</div> */}
+            </div>
           ))}
       </div>
     </div>

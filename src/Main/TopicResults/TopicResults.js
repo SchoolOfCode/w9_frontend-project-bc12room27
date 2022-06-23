@@ -1,7 +1,7 @@
 import "../App.css";
 
 function TopicResults(props) {
-  const { topics, handleClick, toggleFunction } = props;
+  const { topics, handleClick, toggleFunction, } = props;
 
   function groupBy(arr, property) {
     return arr.reduce(function (memo, x) {

@@ -5,6 +5,7 @@ import TopicResults from "./TopicResults/TopicResults";
 import Display from "../Display/Display";
 import Profile from "../Profile/Profile";
 import GetData from "../Data/GetData";
+import axios from 'axios';
 
 const dummyData = [
   {
@@ -106,8 +107,8 @@ const dummyData = [
 ];
 
 function App() {
+  const [data, setData] = useState([]);
   const [userSearch, setUserSearch] = useState("");
-  // const [data, setData] = useState();
   const [topicsBySearch, setTopicsBySearch] = useState(dummyData);
   const [selectedTopic, setSelectedTopic] = useState({
     title: "Sub Topic",
@@ -116,20 +117,33 @@ function App() {
     notes: "",
   });
 
-  // const getData = () => {
 
-  // }
-  // const getData = async () => {
-  //   const response = await fetch('http://localhost:3000/api')
-  //   .then((response) => response.json());
+    useEffect(() => {
+      fetchData();
+    }, []);
 
-  //   setData(response);
-  // }
+    const fetchData = () => {
+      axios
+      .get('http://localhost:3000/api')
+      .then((res) => {
+        console.log('name', res.data.payload)
 
-  // useEffect(() => {
-  //   getData();
-  // }, [])
+        setData(res.data.payload);
 
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+    }
+    useEffect(() => {
+      console.log(data.value);
+    })
+    // console.log(this.data.payload);
+  ;  
+console.log('diff name', data);
+
+///filter array .filter()
+//fuction that runs (inside onclick) 
   
   // const [isChecked, setIsChecked] = useState(dummyData[0].complete);
 
@@ -138,23 +152,18 @@ function App() {
     data.complete = !data.complete;
     console.log("data: ", data);
   };
-
-  /*const response = fetch("http://localhost:3000", {
-    method: GET,
-  })
-
-  */
-
+//use dummyData.map for testing
   function resultsFilter() {
     let resultsarr = [];
     let week = userSearch.split(" ");
     dummyData.map((data) => {
+    // data.map((data) => {
       if (data.week === Number(week[1])) {
         resultsarr.push(data);
       }
     });
     resultsarr.sort((a, b) => a.day - b.day);
-    console.log(resultsarr);
+    // console.log(resultsarr);
     setTopicsBySearch(resultsarr);
   }
 
@@ -167,6 +176,8 @@ function App() {
     setUserSearch(e.target.value);
   }
 
+  // fetch data into here - look into!!
+  // use setData/data state here to call in fetched data?
   function subTopicClick(topic) {
     let top = {
       title: topic.title,
@@ -174,16 +185,19 @@ function App() {
       summary: topic.summary,
       notes: topic.notes,
     };
-
     setSelectedTopic(top);
   }
+
 
   return (
     <div className="App">
       <div className="Profile">
         <h1>Profile</h1>
         <Profile />
-        <GetData />
+        <div>
+          <GetData />
+          {/* <p>{this.data.payload}</p> */}
+          </div>
       </div>
       <div>
       </div>
@@ -206,7 +220,8 @@ function App() {
       </div>
 
       <div className="display">
-        <Display selectedTopic={selectedTopic} />
+        <Display 
+        selectedTopic={selectedTopic} />
       </div>
     </div>
   );
