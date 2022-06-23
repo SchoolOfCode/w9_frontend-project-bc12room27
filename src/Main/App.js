@@ -126,42 +126,44 @@ function App() {
       axios
       .get('http://localhost:3000/api')
       .then((res) => {
-        console.log('name', res.data.payload)
-
+        // console.log('name', res.data.payload)
         setData(res.data.payload);
-
       })
       .catch((err) => {
         console.log(err)
       });
     }
-    useEffect(() => {
-      console.log(data.value);
-    })
+    // useEffect(() => {
+    //   console.log(data.value);
+    // })
     // console.log(this.data.payload);
   ;  
-console.log('diff name', data);
+console.log('Logging Data', data);
 
 ///filter array .filter()
 //fuction that runs (inside onclick) 
   
   // const [isChecked, setIsChecked] = useState(dummyData[0].complete);
+  console.log("Type of Data:", typeof(data))
+  console.log("Data 1",data[0])
+
+
 
   const handleOnChange = (data) => {
     // setIsChecked(!isChecked);
     data.complete = !data.complete;
     console.log("data: ", data);
   };
-//use dummyData.map for testing
+//use dummyData.map for testing -  dummyData.map((data) => {
   function resultsFilter() {
+    console.log(data)
     let resultsarr = [];
     let week = userSearch.split(" ");
-    dummyData.map((data) => {
-    // data.map((data) => {
-      if (data.week === Number(week[1])) {
-        resultsarr.push(data);
+    data.map((info) => {
+      if (info.week === Number(week[1])) {
+        resultsarr.push(info);
       }
-    });
+    })
     resultsarr.sort((a, b) => a.day - b.day);
     // console.log(resultsarr);
     setTopicsBySearch(resultsarr);
@@ -180,10 +182,10 @@ console.log('diff name', data);
   // use setData/data state here to call in fetched data?
   function subTopicClick(topic) {
     let top = {
-      title: topic.title,
-      resources: topic.resources,
+      topic: topic.topic,
+      subtopic: topic.subtopic,
+      weektopic: topic.weektopic,
       summary: topic.summary,
-      notes: topic.notes,
     };
     setSelectedTopic(top);
   }

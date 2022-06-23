@@ -16,6 +16,7 @@ function DropDown(props) {
             <option value="Week 2">Week 2</option>
             <option value="Week 3">Week 3</option>
             <option value="Week 4">Week 4</option>
+            <option value="Week 5">Week 5</option>
           </select>
         </div>
   );

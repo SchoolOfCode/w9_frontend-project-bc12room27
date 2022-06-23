@@ -36,7 +36,7 @@ function TopicResults(props) {
                   key={index}
                   onClick={() => handleClick(b)}
                 >
-                  <p className="sub-title-text">{b.title}</p>
+                  <p className="sub-title-text">{b.subtopic}</p>
                   {b.complete ? (
                     <input
                       type="checkbox"
