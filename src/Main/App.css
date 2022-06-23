@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  font-family: sans-serif;
 }
  
  /* CONTAINER LAYOUT */
@@ -14,18 +15,23 @@
 }
 
 .Profile{
-  background-color: #F5F5F5;
+  background-color: white;
+  width: 20%;
+  padding: 20px;
+  border-right: 2px solid #CECECE;
+ 
+  display: flex;
+  text-align: left;
   align-items: center;
-  margin: 10px;
-  width: 25%;
-  padding: 10px;
+  justify-content: center;
+  
 }
 
 .main-section{
-  background-color: #F5F5F5;
+  background-color: white;
   align-items: center;
   margin: 10px;
-  width: 45%;
+  width: 35%;
   padding: 10px;
 }
 
@@ -33,7 +39,7 @@
   background-color:#F5F5F5;
   align-items: center;
   margin: 10px;
-  width: 25%;
+  width: 45%;
   padding: 10px;
 }
 
@@ -55,12 +61,19 @@
 
 
 /* TOPIC RESULTS */
+.Topic-Container {
+  background-color: #F5F5F5;
+  padding: 10px;
 
+
+}
 
 .topic {
   display: flex;
   margin: 10px;
   background-color: white;
+  font-size: small;
+
 }
 
 .left-column, .right-column {
@@ -87,24 +100,59 @@
 
 /* PROFILE SECTION */
 
+.Welcome {
+  width:  100%;
+  height: auto;
 
-.Profile-Image {
-  height: 100px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: antiquewhite;
-  border: 2px solid red;
+  border-bottom: 2px solid #CECECE;
   margin-bottom: 15px;
-
 }
 
+.Welcome-Text {
+  margin-bottom: 0%;
+  color: blue;
+}
+.Welcome-Name {
+  margin-top: 0%;
+}
+
+.Profile-Image-Container {
+  width:  100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  border-bottom: 2px solid #CECECE;
+  margin-bottom: 15px;
+}
+
+.Profile-Image {
+  
+    position:relative;
+    width:80%;
+    padding-bottom:65%;
+    background:white;
+    border-radius:50%;
+    border: 2px solid blue;
+    text-align: center;
+    margin-bottom: 15px;
+
+  
+    
+  }
+  
 .Profile-Info {
-  height: 150px;
+
   width: 100%;
-  background-color: antiquewhite;
-  border: 2px solid red;
+  height:auto;
+  background-color: white;
   border-radius: 10px;
   text-align: left;
+  font-size: small;
 
+  border-bottom: 2px solid #CECECE;
+  margin-bottom: 15px;
+
+  
 }
 
