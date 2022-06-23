@@ -27,33 +27,39 @@ function TopicResults(props) {
               <div>
                 Week: {a[0].week}, Day: {a[0].day}{" "}
               </div>
-              <p className="percentage-text"> x% Complete</p>
+              {/* <p className="percentage-text"> x% Complete</p> */}
             </div>
             <div className="right-column">
             {a.map((b, index) => {
               return (
                 <div
-                  className="single-topic"
+                  className="single-topic-container"
                   key={index}
                   onClick={() => handleClick(b)}
                 >
-                  <p className="sub-title-text">{b.subtopic}</p>
-                  {b.complete ? (
-                    <input
-                      type="checkbox"
-                      value="Ticked"
-                      onChange={() => toggleFunction(b)}
-                      checked
-                      input
-                    />
-                  ) : (
-                    <input
-                      type="checkbox"
-                      value="Unticked"
-                      onChange={() => toggleFunction(b)}
-                      input
-                    />
-                  )}
+                    <div className="sub-topic-div-left">
+                        <p className="sub-topic-text">{b.subtopic}</p>
+                    </div>
+                    <div className="sub-topic-div-right">
+                        {b.complete ? (
+                            <input
+                            className="input-checkbox"
+                            type="checkbox"
+                            value="Ticked"
+                            onChange={() => toggleFunction(b)}
+                            checked
+                            input
+                            />
+                        ) : (
+                            <input
+                            className="input-checkbox"
+                            type="checkbox"
+                            value="Unticked"
+                            onChange={() => toggleFunction(b)}
+                            input
+                            />
+                        )}
+                    </div>
                 </div>
               );
             })}

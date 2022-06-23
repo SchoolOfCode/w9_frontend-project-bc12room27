@@ -8,8 +8,8 @@ function DropDown(props) {
     
 
   return (
-    <div className="DropDown-Container">
-          <label className='Dropdown-Select-Words' htmlFor="topics">Choose a topic:</label>
+    <div className="Dropdown-Container">
+          <label className='Dropdown-Select-Words' htmlFor="topics">Choose a topic: </label>
           <select className='Dropdown-Select' name="topics" onChange={handleChange}>
            
             <option value="Week 1">Week 1</option>

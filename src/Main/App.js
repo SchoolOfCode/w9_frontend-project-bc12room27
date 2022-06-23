@@ -193,7 +193,13 @@ console.log('Logging Data', data);
 
 
   return (
-    <div className="App">
+   <div className="app-container">
+     <div className="header-container">
+        <div className="header-child">
+          <h1 className="header-title">HappyCamper</h1>
+        </div>
+      </div>
+    <div className="profile-main-display-container">
       <div className="Profile">
         <Profile />
         <div>
@@ -225,6 +231,7 @@ console.log('Logging Data', data);
         selectedTopic={selectedTopic} />
       </div>
     </div>
+  </div> 
   );
 }
 
