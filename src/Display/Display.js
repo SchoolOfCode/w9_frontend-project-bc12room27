@@ -15,9 +15,10 @@ function Display(props) {
           </p>
         );
       })): (<></>)} */}
-      <p>{selectedTopic.topic}</p>
-      <p>{selectedTopic.subtopic}</p>
-      <p>{selectedTopic.summary}</p>
+      <h2>{selectedTopic.topic}</h2>
+      <h3>{selectedTopic.subtopic}</h3>
+      <p>Summary: <br/>{selectedTopic.summary}</p>
+      <p>Syntax: <br/>{selectedTopic.syntax}</p>
     </div>
   );
 }
