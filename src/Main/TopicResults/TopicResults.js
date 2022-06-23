@@ -17,7 +17,7 @@ function TopicResults(props) {
   arr = Object.values(arr);
 
   return (
-    <>
+    <div className="Topic-Container">
       {arr.map((a) => {
         console.log(a);
         return (
@@ -106,7 +106,7 @@ function TopicResults(props) {
       ) : (
         <>Choose a Topic</>
       )} */}
-    </>
+    </div>
   );
 }
 

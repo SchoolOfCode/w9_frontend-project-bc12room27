@@ -195,7 +195,6 @@ console.log('Logging Data', data);
   return (
     <div className="App">
       <div className="Profile">
-        <h1>Profile</h1>
         <Profile />
         <div>
           <GetData />
@@ -206,8 +205,7 @@ console.log('Logging Data', data);
       </div>
 
       <div className="main-section">
-        {/* // headers  */}
-        <h1>Our App</h1>
+       
         {/* // SELECTION COMPONENT */}
         <DropDown handleChange={handleChange} />
         {/* RESULTS OUTPUT */}
