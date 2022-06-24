@@ -25,7 +25,7 @@ function TopicResults(props) {
             <div className="left-column">
               <div>{a[0].topicTitle}</div>
               <div>
-                Week: {a[0].week}, Day: {a[0].day}{" "}
+                Week: {a[0].week} <br/> Day: {a[0].day}{" "}
               </div>
               {/* <p className="percentage-text"> x% Complete</p> */}
             </div>

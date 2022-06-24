@@ -1,13 +1,32 @@
 import "../Main/App.css";
 // import GetData from "../Data/GetData";
 
+
+
+
 function Display(props) {
+
   const { selectedTopic } = props;
+
+  let actualDay = ""
+if (selectedTopic.day ==1){
+  actualDay = "Monday"
+} else if (selectedTopic.day ==2){
+  actualDay = "Tuesday"
+} else if (selectedTopic.day ==3){
+  actualDay = "Wednesday"
+} else if (selectedTopic.day ==4){
+  actualDay = "Thursday"
+} else {
+  actualDay = "Friday"
+}  
+
   console.log("Selected topic is:", selectedTopic);
   return (
     <div className="right-section">
       <div className="display-week-and-topic-div">
-        <h3 className="display-weektopic-name-text">{selectedTopic.weektopic}</h3>
+        <h3>{actualDay} - {selectedTopic.subtopic}</h3>
+        {/* <h3 className="display-weektopic-name-text">{selectedTopic.weektopic}</h3> */}
         <h3 className="display-topic-name-text">({selectedTopic.topic})</h3>
       </div>
         
@@ -21,9 +40,7 @@ function Display(props) {
         })): (<></>)} */}
          
       
-        <div className="display-subtopic-div">
-          <h3 className="display-subtopic-heading">{selectedTopic.subtopic}</h3>
-        </div>
+       
         <div className="display-summary-div">
           <h4 className="display-summary-heading">Summary</h4>
           <p className="display-summary-text">{selectedTopic.summary}</p>

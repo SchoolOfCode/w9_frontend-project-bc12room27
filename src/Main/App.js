@@ -188,6 +188,7 @@ console.log('Logging Data', data);
       weektopic: topic.weektopic,
       summary: topic.summary,
       syntax: topic.syntax,
+      day: topic.day,
     };
     setSelectedTopic(top);
   }
