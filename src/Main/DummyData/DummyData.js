@@ -1,3 +1,4 @@
+//this is dummy data which was used before the backend was connected. This enabled us to test the functionality of the components during development.
 const dummyData = [
   {
     id: 1,

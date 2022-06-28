@@ -1,5 +1,7 @@
 import "../Main/App.css";
 
+//this component renders the profile section on the left-hand div
+
 function Profile() {
   return (
     <div className="Profile-Container">

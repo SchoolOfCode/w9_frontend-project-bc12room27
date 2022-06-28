@@ -18,7 +18,7 @@ function App() {
     summary: "",
     notes: "",
   });
-
+console.log("Data", data)
   
 
   //function used to fetch data from the deployed database (heroku)
@@ -40,10 +40,10 @@ function App() {
 
 
 
-  //Function performs when a checkbox is pressed. The data.complete key value toggles between true & false. 
-  const toggleCheckboxOnClick = (data) => {
-    data.complete = !data.complete;
-    console.log("data: ", data);
+  //Function performs when a checkbox is pressed. The dataObject.complete key value toggles between true & false. 
+  const toggleCheckboxOnClick = (dataObject) => {
+    dataObject.complete = !dataObject.complete;
+    console.log("dataObject: ", dataObject);
   };
 
 
@@ -122,7 +122,7 @@ function App() {
         <div className="main-section">
           <DropDown handleWeekChange={handleWeekChange} />
           <TopicResults
-            topics={topicsBySearch}
+            topicsBySearch={topicsBySearch}
             toggleCheckboxOnClick={toggleCheckboxOnClick}
             subTopicClick={subTopicClick}
           />

@@ -1,8 +1,7 @@
 import "../App.css";
 
-//option values will come from fetches to the database - options.value will be by week (and week overview if possible)
-//display week and overview in jsx with `week: {week} - {weekoverview}`
-
+//this component represents the dropdown menu.
+//when the dropdown option is changed, the handleWeekChange function is called
 function DropDown(props) {
   const { handleWeekChange } = props;
 
@@ -23,3 +22,8 @@ function DropDown(props) {
 }
 
 export default DropDown;
+
+// TEAM - COMPONENT NOTES
+// option values will come from fetches to the database - options.value will be by week (and week overview if possible)
+// display week and overview in jsx with `week: {week} - {weekoverview}`
+// currently the weeks are hard-coded, in the future we could make it more dynamic
