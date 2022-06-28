@@ -18,7 +18,7 @@ function App() {
     summary: "",
     notes: "",
   });
-console.log("Data", data)
+console.log("selectedSubTopic", selectedSubTopic)
   
 
   //function used to fetch data from the deployed database (heroku)
