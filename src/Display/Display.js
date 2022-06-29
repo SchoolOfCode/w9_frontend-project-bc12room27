@@ -1,54 +1,40 @@
 import "../Main/App.css";
 // import GetData from "../Data/GetData";
 
-
-
-
+//this component renders the dataObject info on the right-hand div: topic, subtopic, syntax, summary
 function Display(props) {
+  const { selectedSubTopic } = props;
 
-  const { selectedTopic } = props;
+  //this changes the day from a number to a string value (e.g. monday)
+  let actualDay = "";
+  if (selectedSubTopic.day === 1) {
+    actualDay = "Monday";
+  } else if (selectedSubTopic.day === 2) {
+    actualDay = "Tuesday";
+  } else if (selectedSubTopic.day === 3) {
+    actualDay = "Wednesday";
+  } else if (selectedSubTopic.day === 4) {
+    actualDay = "Thursday";
+  } else {
+    actualDay = "Friday";
+  }
 
-  let actualDay = ""
-if (selectedTopic.day ==1){
-  actualDay = "Monday"
-} else if (selectedTopic.day ==2){
-  actualDay = "Tuesday"
-} else if (selectedTopic.day ==3){
-  actualDay = "Wednesday"
-} else if (selectedTopic.day ==4){
-  actualDay = "Thursday"
-} else {
-  actualDay = "Friday"
-}  
-
-  console.log("Selected topic is:", selectedTopic);
   return (
     <div className="right-section">
       <div className="display-week-and-topic-div">
-        <h3>{actualDay} - {selectedTopic.subtopic}</h3>
-        {/* <h3 className="display-weektopic-name-text">{selectedTopic.weektopic}</h3> */}
-        <h3 className="display-topic-name-text">({selectedTopic.topic})</h3>
+        <h3>
+          {actualDay} - {selectedSubTopic.subtopic}
+        </h3>
+        <h3 className="display-topic-name-text">({selectedSubTopic.topic})</h3>
       </div>
-        
-        {/* {selectedTopic.resources.length > 0 ? (
-          selectedTopic.resources.map((resource, index) => {
-          return (
-            <p key={index}>
-              {index + 1} {resource}
-            </p>
-          );
-        })): (<></>)} */}
-         
-      
-       
-        <div className="display-summary-div">
-          <h4 className="display-summary-heading">Summary</h4>
-          <p className="display-summary-text">{selectedTopic.summary}</p>
-        </div>
-        <div className="display-syntax-div">
-          <h4 className="display-syntax-heading">Syntax</h4>
-          <p className="display-syntax-text">{selectedTopic.syntax}</p>
-        </div>
+      <div className="display-summary-div">
+        <h4 className="display-summary-heading">Summary</h4>
+        <p className="display-summary-text">{selectedSubTopic.summary}</p>
+      </div>
+      <div className="display-syntax-div">
+        <h4 className="display-syntax-heading">Syntax</h4>
+        <p className="display-syntax-text">{selectedSubTopic.syntax}</p>
+      </div>
     </div>
   );
 }

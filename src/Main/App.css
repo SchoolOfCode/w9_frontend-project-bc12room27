@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /* EVERYTHING */
 
+/* CONTAINER LAYOUT */
 
- 
- /* CONTAINER LAYOUT */
-
-.profile-main-display-container{
+.profile-main-display-container {
   display: flex;
   background-color: white;
   align-content: center;
@@ -16,43 +13,39 @@
   font-family: "Quicksand";
 }
 
-.Profile{
+.Profile {
   background-color: white;
   width: 20%;
   padding: 20px;
-  border-right: 1px solid #CECECE;
- 
+  border-right: 1px solid #cecece;
+
   display: flex;
   text-align: left;
   align-items: center;
   justify-content: center;
-  
 }
 
-.main-section{
+.main-section {
   background-color: white;
   align-items: center;
   width: 35%;
   padding: 20px;
-  border-right: 1px solid #CECECE;
-
+  border-right: 1px solid #cecece;
 }
 
-.display{
+.display {
   align-items: center;
   margin: 10px;
   width: 45%;
   padding: 10px;
 }
 
-
-
 /* MAIN */
 
 /* HEADER */
 
-.header-container{
-  background-color: #0056D2;
+.header-container {
+  background-color: #0056d2;
   height: 50px;
   width: 100%;
   margin-bottom: 20px;
@@ -70,11 +63,10 @@
 
 /* DROPDOWN */
 
-
-.Dropdown-Container{
+.Dropdown-Container {
   margin-top: 20px;
   margin-bottom: 25px;
-  background-color: #0056D2;
+  background-color: #0056d2;
   height: 20px;
   width: 100%;
   padding-top: 5px;
@@ -82,12 +74,10 @@
   border-radius: 3px;
   align-items: center;
   justify-content: center;
-
 }
 
-
 .Dropdown-Select {
-  background-color: #0056D2;
+  background-color: #0056d2;
   color: white;
   border: none;
   border-radius: 3px;
@@ -95,25 +85,18 @@
   font-family: "Quicksand";
   margin-bottom: 50px;
   font-size: medium;
-
-  
 }
 
 .Dropdown-Select-Words {
   font-family: "Quicksand";
   color: white;
   font-size: medium;
-
-
 }
-
 
 /* TOPIC RESULTS */
 .Topic-Container {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 10px;
-
-
 }
 
 .topic {
@@ -121,21 +104,19 @@
   margin: 10px;
   background-color: white;
   font-size: small;
-
 }
 
-.left-column{
+.left-column {
   width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 5px;
-  padding-bottom:5px;
+  padding-bottom: 5px;
 }
 .right-column {
   width: 75%;
   text-align: left;
-
 }
 
 /* SUB TOPIC */
@@ -143,130 +124,121 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #CECECE;
-
+  border-bottom: 1px solid #cecece;
 }
 
 .sub-topic-div-right {
-  float:right;
+  float: right;
   width: 10%;
 }
 
-.input-checkbox{
-  border: 2px solid #0056D2;
+.input-checkbox {
+  border: 2px solid #0056d2;
 }
 
 .sub-topic-div-left {
-  float:left;
+  float: left;
   width: 90%;
-   
 }
 .sub-topic-text {
-  padding:0px;
+  padding: 0px;
   margin: 2px;
 }
 
 .percentage-text {
-  padding:0px;
-  margin:4px;
+  padding: 0px;
+  margin: 4px;
 }
-
 
 /* PROFILE SECTION */
 
 .Welcome {
-  width:  100%;
+  width: 100%;
   height: auto;
 
-  border-bottom: 1px solid #CECECE;
+  border-bottom: 1px solid #cecece;
   margin-bottom: 15px;
 }
 
 .Welcome-Text {
   margin-bottom: 0%;
-  color: #0056D2
-  ;
+  color: #0056d2;
 }
 .Welcome-Name {
   margin-top: 0%;
 }
 
 .Profile-Image-Container {
-  width:  100%;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
 
-  border-bottom: 1px solid #CECECE;
+  border-bottom: 1px solid #cecece;
   margin-bottom: 15px;
 }
 
 .Profile-Image {
-  
-    position:relative;
-    width:80%;
-    padding-bottom:65%;
-    background:white;
-    border-radius:50%;
-    border: 1px solid #0056D2
-    ;
-    text-align: center;
-    margin-bottom: 15px;
+  position: relative;
+  width: 80%;
+  padding-bottom: 65%;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #0056d2;
+  text-align: center;
+  margin-bottom: 15px;
+}
 
-  
-    
-  }
-  
 .Profile-Info {
-
   width: 100%;
-  height:auto;
+  height: auto;
   background-color: white;
   border-radius: 10px;
   text-align: left;
   font-size: small;
 
-  border-bottom: 1px solid #CECECE;
+  border-bottom: 1px solid #cecece;
   margin-bottom: 15px;
 }
 
 /*  DISPLAY */
 
-.display-week-and-topic-div{
+.display-week-and-topic-div {
   font-size: medium;
   font-family: "Quicksand";
   padding-top: 10px;
   padding-bottom: 10px;
 
-  border-bottom: 1px solid #CECECE;
+  border-bottom: 1px solid #cecece;
   margin-bottom: 15px;
 }
 
-.display-weektopic-name-text{
+.display-weektopic-name-text {
   font-family: "Quicksand";
   font-size: 18px;
 }
 
-.display-topic-name-text{
+.display-topic-name-text {
   font-family: "Quicksand";
   font-size: 16px;
-  font-weight:normal;
+  font-weight: normal;
 }
 
-.display-subtopic-heading{
+.display-subtopic-heading {
   font-size: 16px;
 }
-.display-summary-div{
-  border-bottom: 1px solid #CECECE;
-
+.display-summary-div {
+  border-bottom: 1px solid #cecece;
 }
 
-.display-summary-text, .display-syntax-text{
+.display-summary-text,
+.display-syntax-text {
   font-size: 13px;
   font-family: "Quicksand";
 }
 
-.display-summary-heading, .display-syntax-heading{
+.display-summary-heading,
+.display-syntax-heading {
   font-family: "Quicksand";
   font-size: 14px;
 }
