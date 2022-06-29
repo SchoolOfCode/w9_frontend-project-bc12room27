@@ -20,7 +20,7 @@ Happy Camper is an app to aid code School of Code bootcamp students in their int
 
 ## Setup
 
-Run nmp i to install dependencies.
+Run npm i to install dependencies.
 
 ```bash
 npm i
