@@ -3,7 +3,7 @@ import "../App.css";
 function TopicResults(props) {
   const { topicsBySearch, subTopicClick, toggleCheckboxOnClick } = props;
 
-  // This function turns the data array of objects into an array of arrays. This enables us to filter through the data when searching by day and week
+  // This function turns the data (array of objects) into an array of arrays. This enables us to filter through the data when searching by day and week
   function groupBy(arr, property) {
     return arr.reduce(function (memo, x) {
       if (!memo[x[property]]) {
@@ -14,14 +14,14 @@ function TopicResults(props) {
     }, {});
   }
 
-  //This groups all the topicsBySearch (data) by "day" for the selected week, and then returns in the form of an array of arrays, each containing all objects with matching days. 
+  //This groups all the topicsBySearch (data) by "day" for the selected week, and then returns in the form of an array of arrays, each containing all the objects with matching days. 
   let arr = groupBy(topicsBySearch, "day");
   arr = Object.values(arr);
   console.log("arr: ",arr)
 
   return (
     <div className="Topic-Container">
-      {/* the below line maps through the nested arrays in 'arr'. 'a' represents each item (object) within arr. 'a' is then used to render topic, week & day in the left column using only the first oblect [0] of the array, as all objects within the array will represent the same data */}
+      {/* the below line maps through the nested arrays in 'arr'. 'a' represents each item (object) within arr. 'a' is then used to render topic, week & day in the left column using only the first object [0] of the array, as all objects within the array will represent the same data */}
       {arr.map((a) => {
         console.log(a);
         return (

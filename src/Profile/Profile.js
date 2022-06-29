@@ -1,6 +1,6 @@
 import "../Main/App.css";
 
-//this component renders the profile section on the left-hand div
+//this component renders the profile section on the profile div (left-hand side)
 
 function Profile() {
   return (

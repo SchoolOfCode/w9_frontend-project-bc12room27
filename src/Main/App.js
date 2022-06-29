@@ -12,16 +12,10 @@ function App() {
   const [data, setData] = useState([]);
   const [selectedWeek, setSelectedWeek] = useState("");
   const [topicsBySearch, setTopicsBySearch] = useState(data);
-  const [selectedSubTopic, setSelectedSubTopic] = useState({
-    title: "Sub Topic",
-    resources: [],
-    summary: "",
-    notes: "",
-  });
-console.log("selectedSubTopic", selectedSubTopic)
+  const [selectedSubTopic, setSelectedSubTopic] = useState({});
   
 
-  //function used to fetch data from the deployed database (heroku)
+  // Function used to fetch data from the deployed database (heroku)
   const fetchData = () => {
     axios
       .get("https://projectweekroom27.herokuapp.com/api")
@@ -33,14 +27,14 @@ console.log("selectedSubTopic", selectedSubTopic)
       });
   };
 
-  // enables the fetchData function to be called Async
+  // Enables the fetchData function to be called asynchronously 
   useEffect(() => {
     fetchData();
   }, []);
 
 
 
-  //Function performs when a checkbox is pressed. The dataObject.complete key value toggles between true & false. 
+  // Function performs when a checkbox is pressed. The 'dataObject.complete' value toggles between true & false when checkbox is clicked by user. 
   const toggleCheckboxOnClick = (dataObject) => {
     dataObject.complete = !dataObject.complete;
     console.log("dataObject: ", dataObject);
@@ -72,25 +66,24 @@ console.log("selectedSubTopic", selectedSubTopic)
       }
     });
 
-    // This part of the function sorts the days of the week in order.
+    // This part of the function sorts the days of the week in chronological order.
     resultsArr.sort((a, b) => a.day - b.day);
     console.log("resultsArr: ", resultsArr);
     setTopicsBySearch(resultsArr);
   }
 
-  // enables the userWeekSelect function to be called Async - rendering only selectedWeek & selectedSubTopic
+  // Enables the userWeekSelect function to be called Asynchronously - rendering only selectedWeek & selectedSubTopic
   useEffect(() => {
     userWeekSelect();
   }, [selectedWeek, selectedSubTopic]);
 
   // When the week in the dropdown is changed, this function is called and the Selected week state is updated to the user's week selection
   function handleWeekChange(e) {
-    e.preventDefault(); //PURPOSE?
     setSelectedWeek(e.target.value);
   }
 
 
-  // when a sub topic is clicked, the subTopicClick function is called and the selectedSubTopic state is updated with the newData  
+  // when a sub topic is clicked in the main component, the subTopicClick function is called and the selectedSubTopic state is updated with the newData  
   function subTopicClick(dataObject) {
     let newData = {
       topic: dataObject.topic,
@@ -113,11 +106,7 @@ console.log("selectedSubTopic", selectedSubTopic)
       <div className="profile-main-display-container">
         <div className="Profile">
           <Profile />
-          <div>
-            <GetData />
-          </div>
         </div>
-        <div></div>
 
         <div className="main-section">
           <DropDown handleWeekChange={handleWeekChange} />
