@@ -2,6 +2,8 @@
 
 Happy Camper is an app to aid code School of Code bootcamp students in their intensive studies by enabling students to view a breakdown of the topics covered, sorted by week and day. 
 
+<img src="/public/Screenshot 2022-06-29 at 12.27.06.png">
+
 ## Features
 
 • Topic filtering by both week and day.  
